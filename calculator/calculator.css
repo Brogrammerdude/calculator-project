@@ -1,1 +1,329 @@
-/* fill in styling here */
+:root
+{
+    --phi: 1.618;
+}
+
+*
+{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#calculator-header
+{
+    margin-top: calc(17.7vh - 37px);
+    height: 5%;
+}
+
+    h1
+    {
+        height: 100%;
+
+        text-align: center;
+    }
+
+#div-operator-box
+{
+    display: flex;
+}
+
+    .operation-label, .input-operators
+    {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 7em;
+    }
+
+        .input-operators:checked+label
+        {
+            font-weight: bold;
+        }
+
+#left-label-add
+{
+    display: none;
+}
+
+#left-label-subtract
+{
+    display: none;
+}
+
+#left-label-multiply
+{
+    display: none;
+}
+
+#left-label-divide
+{
+    display: none;
+}
+
+.input-term-one
+{
+    box-sizing: border-box;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+#div-operation
+{
+    outline: 1px solid #000;
+    border-radius: 50%;
+    padding-top: 0.1em;
+    padding-right: 0.7em;
+    padding-bottom: 0.1em;
+    padding-left: 0.7em;
+}
+
+    #calculator-operation
+    {
+        font-size: 2em;
+    }
+
+.input-term-two
+{
+    box-sizing: border-box;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+.calculation-result
+{
+    width: 100%;
+
+    text-align: left;
+}
+
+#div-buttons-box
+{
+    display: flex;
+
+    align-items: center;
+}
+
+    #button-perform-calculation
+    {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 25%;
+        border-color: midnightblue;
+        border-width: 1px;
+        padding-top: 1em;
+        padding-right: 1.3em;
+        padding-bottom: 1em;
+        padding-left: 1.3em;
+
+        background-image: linear-gradient(to right, #00b4db, #0083b0);
+
+        font-size: 1em;
+    }
+
+        #button-perform-calculation:hover
+        {
+            border-color: aquamarine;
+
+            box-shadow: 0px 0px 5px 3px #FFE;
+
+            background-image: linear-gradient(to right, #00b4db, #0083b0);
+
+            color: aquamarine;
+            text-shadow: 2 #000;
+        }
+
+    #button-reset
+    {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+
+        margin-left: 1em;
+
+        width: 100%;
+    }
+
+#calculator-message
+{
+    font-size: 1.25em;
+    text-align: center;
+}
+
+#grid-calculator
+{
+    margin-right: auto;
+    margin-left: auto;
+    outline: 1px solid #000;
+    border-radius: 0.5em;
+    width: 85.41%;
+    max-width: 600px;
+    min-width: 425px;
+    height: 52.79%;
+    padding: 1em;
+
+    background: lightgray;
+}
+
+    #div-title
+    {
+        grid-area: div-title;
+
+        justify-self: left;
+    }
+
+    #div-status-label
+    {
+        grid-area: div-status-label;
+
+        justify-self: right;
+    }
+
+    #div-status
+    {
+        grid-area: div-status;
+
+        justify-self: left;
+    }
+
+    #div-operator-box
+    {
+        grid-area: span-operators;
+    }
+
+ /*
+    #div-add-operation
+    {
+        grid-area: div-add-operation;
+
+        justify-self: left;
+    }
+
+    #div-subtract-operation
+    {
+        grid-area: div-subtract-operation;
+
+        justify-self: left;
+    }
+
+    #div-multiply-operation
+    {
+        grid-area: div-multiply-operation;
+
+        justify-self: left;
+    }
+
+    #div-divide-operation
+    {
+        grid-area: div-divide-operation;
+
+        justify-self: left;
+    }
+ */
+    #div-term-one-label
+    {
+        grid-area: div-term-one-label;
+    }
+
+    #div-term-one-input
+    {
+        grid-area: div-term-one-input;
+
+        width: 100%;
+    }
+
+    #div-operation
+    {
+        grid-area: div-operation;
+    }
+
+    #div-term-two-label
+    {
+        grid-area: div-term-two-label;
+    }
+
+    #div-term-two-input
+    {
+        grid-area: div-term-two-input;
+
+        width: 100%;
+    }
+
+    .buttons
+    {
+        grid-area: span-buttons;
+    }
+
+ /*
+    #div-calculate-button
+    {
+        grid-area: div-calculate-button;
+    }
+ */
+    #div-calculation-result-label
+    {
+        grid-area: div-calculation-result-label;
+
+        justify-self: right;
+    }
+
+    #div-calculation-result
+    {
+        grid-area: div-calculation-result;
+
+        width: 100%;
+    }
+
+    #div-message
+    {
+        grid-area: div-message;
+
+        /* justify-self: twigpi; */
+    }
+ /*
+    #div-reset-button
+    {
+        grid-area: div-reset-button;
+
+        justify-self: center;
+        width: calc( 100% / var(--phi) );
+    }
+ */
+
+#grid-calculator
+{
+    display: grid;
+    grid-gap: 1%;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-rows: 1.5em;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        "div-title div-status-label div-status div-operation"
+        ". div-calculation-result-label div-calculation-result ."
+        "div-term-one-label div-term-one-label div-term-two-label div-term-two-label"
+        "div-term-one-input div-term-one-input div-term-two-input div-term-two-input"
+        "span-operators span-operators span-operators span-operators"
+        ". span-buttons span-buttons ."
+ /*     "div-add-operation div-subtract-operation div-multiply-operation div-divide-operation"
+        ". div-calculate-button div-reset-button ."
+ */     "div-message div-message div-message div-message"
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"]
+{
+    -moz-appearance: textfield;
+}
